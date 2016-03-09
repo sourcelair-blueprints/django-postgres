@@ -1,0 +1,8 @@
+#! /usr/bin/env sh
+
+# This scripts initializes the database for this project
+
+if [ "$SL_ENV" -eq "1" ]; then
+    export PGPASSWORD=mysecretpassword
+    psql -h postgres -U postgres --command="CREATE DATABASE app;"
+fi
